@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BBB</title>
+
+        <style>
+          
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap');
+
+           *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           }
+
+           body{
+
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(53, 60, 52);
+            font-family: 'Poppins', sans-serif;
+            color: aliceblue;
+           }
+
+           main{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           }
+           
+           .container{
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            
+
+            
+           }
+
+           .container .video{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            
+           
+           }
+           .container .video h3{
+            font-size: 30px ;
+            font-weight: 300;
+            text-align: center;
+            padding: 20px 0;
+           }
+
+           .container .video iframe{
+            width: 600px;
+            height: 340px;
+            border: none;
+           }
+
+           .container .cameras{
+            width: 300px;
+            height: 350px;
+
+            display: flex;
+            flex-direction: column;
+
+           
+           }
+
+           .container .cameras .button{
+            width: 100%;
+            height: 50px;
+            margin-top:;
+            font-family: 'Poppins', sans-serif;
+
+            background-color: transparent;
+            color: aliceblue;
+            transition:0.4s ;
+            outline: none;
+            border-top: none;
+            border-bottom: 1px solid rgb(95, 95, 95);
+            
+            border-left: 1px solid rgb(95, 95, 95);
+            
+            border-right: 1px solid rgb(95, 95, 95);
+            
+           }
+
+           .container .cameras .button-clicked{
+                background-color: rgb(238, 234, 234);
+                color: black;
+           }
+           
+          
+
+
+           @media only screen and (max-width: 850px){
+                
+                    .container{
+                        margin-top: 30px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .container .cameras{
+                    width: 80%;
+                }
+                    
+                }
+            
+
+            @media only screen and (max-width: 600px){
+                body{
+                    width: 100%; 
+                    
+                }
+                
+                .container{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .container .video{
+                    width: 100%;
+                    height: 400px;
+                }
+               .container .video iframe {
+                    width: 100%;
+                    height: 310px;
+                }
+
+                .container .cameras{
+                    width: 90%;
+                }
+              }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section class="container">
+                <div class="video">
+                    <h3>Camera 01</h3>
+                    <iframe 
+                        name=Player "" src="https://sinalpublico.com/player3/ch.php?canal=bbb23s01" allowFullScreen>
+                    </iframe>
+                </div>
+                <div class="cameras">
+                    <button class="button" id="button01" onclick="camera01()" >Camera 01</button>
+                    <button class="button" id="button02" onclick="camera02()">Camera 02</button>
+                    <button class="button" id="button03" onclick="camera03()">Camera 03</button>
+                    <button class="button" id="button04" onclick="camera04()">Camera 04</button>
+                    <button class="button" id="button05" onclick="camera05()">Camera 05</button>
+                    <button class="button" id="button06" onclick="camera06()">Camera 06</button>
+                    <button class="button" id="button07" onclick="camera07()">Camera 07</button>
+                    <button class="button" id="button08" onclick="camera08()">Camera 08</button>
+                    
+                </div>
+            </section>
+        </main>
+    </body>
+    <script>
+            var buttons = document.getElementsByClassName("button");
+
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener("click", function() {
+                    for (var j = 0; j < buttons.length; j++) {
+                        buttons[j].classList.remove("button-clicked");
+                }
+                this.classList.add("button-clicked");
+                });
+            }
+
+
+            function camera01(){
+                document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s01"
+                document.querySelector('h3').innerHTML = "Camera 01"   
+            }
+            function camera02(){
+                document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s02"
+                document.querySelector('h3').innerHTML = "Camera 02"
+            }
+            
+            function camera03(){
+                document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s03"
+                document.querySelector('h3').innerHTML = "Camera 03"
+            }
+            function camera04(){
+                document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s04"
+                document.querySelector('h3').innerHTML = "Camera 04"
+            }
+            function camera05(){
+                document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s05"
+                document.querySelector('h3').innerHTML = "Camera 05"
+            }
+            function camera06(){
+                document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s06"
+                document.querySelector('h3').innerHTML = "Camera 06"
+            }
+            function camera07(){
+                document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s07"
+                document.querySelector('h3').innerHTML = "Camera 07"
+            }
+            function camera08(){
+                document.querySelector('iframe').src = "https://sinalpublico.com/player3/ch.php?canal=bbb23s08"
+                document.querySelector('h3').innerHTML = "Camera 08"
+            }
+    </script>
+</html>
